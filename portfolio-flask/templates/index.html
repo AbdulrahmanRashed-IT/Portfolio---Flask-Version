@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdulrahman Portfolio Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" width="255" height="100" />
+
+          <ul id="sidemenu">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('services') }}">Services</a></li>
+            <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <i class="fas fa-times" onclick="closemenu()"></i>
+          </ul>
+
+          <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <div class="header-text">
+          <p><span class="typing-text"></span></p>
+          <h1>
+            Hi, I'm <span class="gradient-text">Abdulrahman</span><br />
+          </h1>
+          <div class="scroll-down">
+            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="{{ url_for('static', filename='images/user.png') }}" class="profile-img" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Motivated and passionate Information Technology student with a
+              strong foundation in full-stack web development (HTML, CSS,
+              JavaScript, PHP, MySQL, RESTful APIs, Laravel), networking (CCNA –
+              Switching, Routing, Security), and IT support (MCSA, Linux
+              administration). Actively seeking a training opportunity where I
+              can enhance my expertise in system architecture, secure network
+              configurations, and modern web technologies. I aim to grow into a
+              versatile professional who can design, implement, and maintain
+              responsive, scalable, and secure digital solutions across both
+              development and infrastructure domains.
+            </p>
+            <div class="tab-titles">
+              <p
+                class="tab-links active-link"
+                onclick="opentab('skills', this)"
+              >
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience', this)">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education', this)">
+                Education
+              </p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>Programming Languages:</span><br />
+                  HTML, CSS, JavaScript, PHP, Python, Java, C++, C#, SQL
+                </li>
+                <li>
+                  <span>Frameworks & Tools:</span><br />
+                  Laravel, Bootstrap, Java Swing, Tkinter, XAMPP, Postman,
+                  RESTful API
+                </li>
+                <li>
+                  <span>Database Management:</span><br />
+                  MySQL, phpMyAdmin
+                </li>
+                <li>
+                  <span>Development Areas:</span><br />
+                  Full-Stack Web Development, API Integration, Desktop App
+                  Development
+                </li>
+                <li>
+                  <span>Version Control:</span><br />
+                  Git & GitHub
+                </li>
+                <li>
+                  <span>Networking & IT Support:</span><br />
+                  Cisco Routing & Switching (CCNA), Network Security, Server
+                  Configuration (MCSA), Linux Administration
+                </li>
+                <li>
+                  <span>Soft Skills:</span><br />
+                  Problem Solving, Project Management, Technical Support,
+                  Communication, Team Collaboration
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2024 – 2025</span><br />
+                  ▸ Built a Sandal Ordering Web App using PHP, MySQL, HTML, CSS,
+                  and JavaScript<br />
+                  ▸ Developed a Café Ordering System using PHP, MySQL, HTML,
+                  CSS, and JavaScript<br />
+                  ▸ Developed a Pharmacy Management System using MySQL<br />
+                  ▸ Configured VLANs, routers, and switches in Cisco Packet
+                  Tracer (CCNA Lab Projects)<br />
+                  ▸ Provided system and network support using Windows Server and
+                  basic Linux tools<br />
+                  ▸ Applied RESTful API integration and followed clean code
+                  practices
+                </li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>B.Sc. in Information Technology</span><br />
+                  UIN Walisongo Semarang – Faculty of Science and Technology<br />
+                  📍 Semarang, Indonesia | 📅 2023 – Present<br />
+                  Focus: Software Engineering, Network Systems, and Database
+                  Management
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h2>Full-Stack Web Development</h2>
+            <p>
+              Design and develop responsive and secure web applications using
+              HTML, CSS, JavaScript, PHP, MySQL, and Laravel. Integration with
+              RESTful APIs and clean UI/UX design.
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <h2>Database Design & Management</h2>
+            <p>
+              Design relational databases using MySQL and phpMyAdmin. Ensure
+              data integrity, performance optimization, and secure access
+              control.
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <h2>Networking Solutions</h2>
+            <p>
+              Configure and troubleshoot networks with Cisco routers and
+              switches. Expertise in VLANs, subnetting, routing protocols, and
+              network security (CCNA&CCNP).
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h2>IT Support & System Admin</h2>
+            <p>
+              Provide IT support including Windows Server (MCSA) setup,
+              troubleshooting, and Linux administration for local networks and
+              servers.
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-desktop"></i>
+            </div>
+            <h2>Desktop Application Development</h2>
+            <p>
+              Build standalone desktop applications using Python (Tkinter) and
+              Java (Swing) for inventory, POS, and custom business solutions.
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h2>Tech Training & Workshops</h2>
+            <p>
+              Deliver beginner-friendly training on programming, web
+              development, networking basics, and Linux system usage.
+            </p>
+            <a href="#" class="service-link">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portfolio Section -->
+    <div id="Portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="{{ url_for('static', filename='images/pharmacy.png') }}" />
+            <div class="layer">
+              <h3>Pharmacy Management System</h3>
+              <p>See more about the project</p>
+              <a href="{{ url_for('pharmacy') }}"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="{{ url_for('static', filename='images/cafe.png') }}" />
+            <div class="layer">
+              <h3>Caffe Ordering System</h3>
+              <p>See more about the project</p>
+              <a href="{{ url_for('cafe_ordering_system') }}"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="{{ url_for('static', filename='images/sandals.png') }}" />
+            <div class="layer">
+              <h3>Shoes Store Ordering System Online&Offline</h3>
+              <p>See more about the project</p>
+              <a href="{{ url_for('sandal') }}"
+                ><i class="fa-solid fa-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact me</h1>
+            <p><i class="fas fa-paper-plane"></i>man2rashed@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i>+62 87840273282</p>
+            <div class="social-icons">
+              <a
+                href="https://www.facebook.com/share/1Ah3mEPNwY/"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/abood2alrashed?igsh=Z2NlMzh3ZGxzMWt5"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/abdulrahman-rashed-647548373/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/AbdulrahmanRashed-IT" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+            </div>
+            <a
+              href="{{ url_for('static', filename='images/Abdulrahman_Rashed.CV.pdf') }}"
+              download
+              class="btn btn2"
+              >Download CV</a
+            >
+          </div>
+          <div class="contact-right">
+            <form method="POST" action="{{ url_for('contact') }}">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="flash-message {{ category }}">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2025 Abdulrahman Ahmed. Built with @ and code.</p>
+      </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
